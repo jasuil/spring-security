@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace='definition'>
+    
+    <update  id='' >
+    create table user_authentication(
+	username varchar2(50) not null,
+	password varchar2(100) not null,
+	enabled int not null
+	);
+	
+	create table user_authorization(
+	username varchar2(50) not null,
+	authority varchar2(50) not null
+	);
+	
+	insert into user_authorization values ('j','ROLE_USER');
+	insert into user_authorization values ('j','ROLE_ADMIN');
+	insert into user_authorization values ('j','ROLE_MANAGER');
+	insert into user_authentication values ('j', '1212', 1);
+	insert into user_authorization values ('jsi','ROLE_USER');
+	insert into user_authentication values ('jsi', '1212', 1);
+	insert into user_authorization values ('jasuil','ROLE_ADMIN');
+	insert into user_authentication values ('jasuil', '1212', 1);
+	commit;
+    </update>
+    
+    </mapper>
